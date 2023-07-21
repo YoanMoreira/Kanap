@@ -7,7 +7,7 @@ let productData = [];
 /*
  * Fonction asynchrone permettant de fetch un produit
  * Les données du produit iront dans la variable (tableau) productData
- */
+ **/
 const fetchProduct = async () => {
   await fetch(`http://localhost:3000/api/products/${product}`)
     .then((res) => res.json())
@@ -17,9 +17,7 @@ const fetchProduct = async () => {
     });
 };
 
-/*
- * Fonction asynchrone permettant d'afficher un produit
- */
+/** Fonction asynchrone permettant d'afficher un produit*/
 const productDisplay = async () => {
   await fetchProduct();
   let images = document.getElementsByClassName("item__img");
@@ -44,9 +42,7 @@ const productDisplay = async () => {
 };
 productDisplay();
 
-/*
- * Fonction permettant d'ajouter un produit au panier
- */
+/** Fonction permettant d'ajouter un produit au panier*/
 const addProduct = () => {
   let button = document.getElementById("addToCart");
 
@@ -106,7 +102,7 @@ const addProduct = () => {
         productsInStorage.push(productDataWithQuantityAndColor);
       }
     } else {
-      // Le panier est vide, On commence donc à le remplir*/
+      /**  Le panier est vide, On commence donc à le remplir*/
       productsInStorage.push(productDataWithQuantityAndColor);
     }
     /**  On met à jour (on écrase) notre panier 'products' du localStorage*/
