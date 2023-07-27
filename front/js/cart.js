@@ -81,16 +81,18 @@ const displayTotalPrice = async () => {
     console.log(cart);
     /** Calcul du prix total*/
     let totalPrice = 0;
+    let totalQuality = 0;
 
     cart.forEach((productInCart) => {
       console.log(productInCart);
       totalPrice +=
         parseInt(productInCart.quantity) *
         PriceMath(productInCart._id, parseInt(productInCart.quantity));
+      totalQuality += parseInt(productInCart.quantity);
     });
     /**Insertion du prix total après que l'on ait affiché les produits du panier*/
     const displayQuality = document.querySelector("#totalQuantity");
-    displayQuality.innerHTML = `${cart.length}`;
+    displayQuality.innerHTML = `${totalQuality}`;
 
     const displayPrice = document.querySelector("#totalPrice");
     displayPrice.innerHTML = `${totalPrice}`;
