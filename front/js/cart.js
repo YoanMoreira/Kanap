@@ -312,7 +312,18 @@ email.addEventListener("input", (e) => {
 
 let users = [];
 const addUser = (e) => {
-  e.preventDefault(); // Empêcher le rechargement de la page lors du clic*/
+  e.preventDefault();
+// Empêcher le rechargement de la page lors du clic*/
+if (
+  firstName.value === "" ||
+  lastName.value === "" ||
+  address.value === "" ||
+  city.value === "" ||
+  email.value === ""
+) {
+  alert("Veuillez remplir tous les champs du formulaire.");
+  return;
+}
   let user = {
     firstName: firstName.value,
     lastName: lastName.value,
