@@ -332,15 +332,3 @@ if (
     city: city.value,
     email: email.value,
   };
-  users.push(user);
-  document.querySelectorAll(".cart__order__form")[0].reset(); /** Pour reset le form*/
- /**Vérification de la prise en compte de la création de l'objet*/
-
-  console.warn("added", { users });
-
- /**stockage en localStorage et redirection vers la page de confirmation*/
-
-  localStorage.setItem("users", JSON.stringify(users));
-  window.location.href = "./confirmation.html";
-};
-confirm.addEventListener("click", addUser)
