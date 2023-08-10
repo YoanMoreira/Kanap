@@ -306,6 +306,7 @@ email.addEventListener("input", (e) => {
       "Un email doit être écrit avec un @ un . et des caractères (ex:kanap@gmail.com)";
     valueEmail = null;
   }
+  
 });
 
 /**objet contact*/
@@ -313,7 +314,7 @@ email.addEventListener("input", (e) => {
 let users = [];
 const addUser = (e) => {
   e.preventDefault();
-// Empêcher le rechargement de la page lors du clic*/
+/** Empêcher le rechargement de la page lors du clic*/
 if (
   firstName.value === "" ||
   lastName.value === "" ||
